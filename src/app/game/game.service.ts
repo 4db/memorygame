@@ -37,12 +37,17 @@ export class GameService {
     if (this.selectedCard.subid === card.subid && this.selectedCard.id !== card.id) {
       this.selectedCard.enable = false;
       card.enable = false;
+      this.selectedCard.flipped = true;
+      card.flipped = true;
       this.enableCount -= 2;
     }
     else {
-      setTimeout((s)=>{
+      setTimeout((selected)=> {
         card.flipped = false;
-        s.flipped = false; 
+        selected.flipped = false;
+
+        selected.enable = true;
+        card.enable = true;
       }, 600, this.selectedCard);
     }
     this.selectedCard = undefined;
