@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { Collection } from '../mock/collection';
 import { COLLECTIONS } from '../mock/mock-collections';
 
- const LOGO_IMG = "https://material.angularjs.org/latest/img/logo.svg";
- const CONGRATULATIONS_IMG = "https://dl.dropboxusercontent.com/s/e1t2hhowjcrs7f5/100daysui_100icon.png";
+ const URL = "https://aldb.github.io/memorygame/src/assets/";
+ const LOGO_IMG = "logo.png";
+ const CONGRATULATIONS_IMG = "cong.png";
 
 @Injectable()
 export class GameService {
@@ -63,7 +64,7 @@ export class GameService {
   }
 
   private getLogoUrl() {
-    return LOGO_IMG;
+    return URL + LOGO_IMG;
   }
 
   private generateCard(id, c) {
@@ -72,7 +73,7 @@ export class GameService {
         id: id,
         subid: c.id,
         name: c.name,
-        url: c.url,
+        url: URL + c.url,
         enable: true,
         flipped : false
     };
@@ -83,6 +84,6 @@ export class GameService {
   }
 
   private getCongratulationImg() {
-    return CONGRATULATIONS_IMG;
+    return URL + CONGRATULATIONS_IMG;
   }
 }

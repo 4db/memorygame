@@ -26,6 +26,7 @@ export class CardComponent implements OnInit {
   }
 
   getBackUrl() {
+        console.log(this.gameService.getLogoUrl());
     return this.card.url;
   }
 

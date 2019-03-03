@@ -2,48 +2,48 @@ import { Collection } from './collection';
 
 export const COLLECTIONS: Collection[] = [
   {
-    name: "php",
-    url: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/php-logo_1.png",
+    name: "aang",
+    url: "aang.png",
     id: 1,
   },
   {
-    name: "css3",
-    url: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/css3-logo.png",
+    name: "aang",
+    url: "aang2.jpg",
     id: 2
   },
   {
     name: "html5",
-    url: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/html5-logo.png",
+    url: "aang3.jpg",
     id: 3
   },
   {
-    name: "jquery",
-    url: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/jquery-logo.png",
+    name: "appa",
+    url: "apa.png",
     id: 4
   }, 
   {
-    name: "javascript",
-    url: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/js-logo.png",
+    name: "appa",
+    url: "appa.png",
     id: 5
   },
   {
-    name: "node",
-    url: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/nodejs-logo.png",
+    name: "katara2",
+    url: "katara2.png",
     id: 6
   },
   {
-    name: "photoshop",
-    url: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/photoshop-logo.png",
+    name: "katara",
+    url: "Katara.png",
     id: 7
   },
   {
-    name: "python",
-    url: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/python-logo.png",
+    name: "map",
+    url: "map.png",
     id: 8
   },
   {
-    name: "rails",
-    url: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/rails-logo.png",
+    name: "team",
+    url: "team.png",
     id: 9
   }
 ];
