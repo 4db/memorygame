@@ -25,4 +25,12 @@ export class CardComponent implements OnInit {
     return selected && selected.id === this.card.id;
   }
 
+  getBackUrl() {
+    return this.gameService.getCardUrl(this.card);
+  }
+
+  getFrontUrl() {
+     return this.gameService.getFrontUrl();
+  }
+
 }

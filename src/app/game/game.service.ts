@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { Collection } from '../mock/collection';
 import { COLLECTIONS } from '../mock/mock-collections';
 
+ const LOGO_URL = "https://material.angularjs.org/latest/img/logo.svg";
+
 @Injectable()
 export class GameService {
-
-  cards;
+   private cards;
   private enableCount;
   private selectedCard;
   
@@ -25,6 +26,7 @@ export class GameService {
   }
 
   private onCardSelected(card) {
+    card.flipped = true;
     if (!this.selectedCard) {
       this.selectedCard = card;
       return;
@@ -34,6 +36,12 @@ export class GameService {
       card.enable = false;
       this.enableCount -= 2;
     }
+    else {
+      setTimeout((s)=>{
+        card.flipped = false;
+        s.flipped = false; 
+      }, 600, this.selectedCard);
+    }
     this.selectedCard = undefined;
   }
 
@@ -42,7 +50,6 @@ export class GameService {
   }
 
   private setCards() {
-    console.log("start")
     this.cards = [];
     this.enableCount = 0;
 
@@ -54,6 +61,10 @@ export class GameService {
     }
   }
 
+  private getLogoUrl() {
+    return LOGO_URL;
+  }
+
   private generateCard(id, c) {
     // TODO create a card class
     return {
@@ -61,7 +72,8 @@ export class GameService {
         subid: c.id,
         name: c.name,
         url: c.url,
-        enable: true
+        enable: true,
+        flipped : false
     };
   }
 

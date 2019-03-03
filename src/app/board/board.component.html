@@ -1,4 +1,8 @@
-
-<div *ngFor="let card of getCards()">
-  <app-card [card]="card"></app-card>
-</div>
+<mat-grid-list 
+  cols="2"
+  rowHeight="2:1.5"
+  >
+  <mat-grid-tile *ngFor="let card of getCards()">
+    <app-card [card]="card"></app-card>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -1,6 +1,20 @@
-<div class="card"
+<mat-card
   (click)="onSelect()"
   [class.selected]="isSelectedCard()"
   [class.notEnable]="!card.enable">
-    {{card | json}}
-</div>
+  <!-- <img mat-card-image
+  src="{{getUrl()}}"
+  layout-fill> -->
+  <label>    
+      <div class="player" [class.voted]="card.flipped">
+          <div class="front">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtkL8GlKZ775j3f0VVgS1rU8L2LoX5UEM6fKv_eGLzeza27WYH">
+        </div>
+          <div class="back">
+            <img src="https://material.angularjs.org/latest/img/logo.svg">
+          </div>
+      </div>
+  </label>
+</mat-card>
+
+
