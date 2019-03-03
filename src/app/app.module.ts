@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { BoardComponent } from './board/board.component';
 import { GameComponent } from './game/game.component';
 import { CardComponent } from './card/card.component';
+import { GameService } from './game/game.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, BoardComponent, GameComponent, CardComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [GameService]
 })
 export class AppModule { }

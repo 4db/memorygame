@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Collection } from './collection';
-import { COLLECTIONS } from './mock-collections';
+import { GameService } from './game.service';
 
 @Component({
   selector: 'app-game',
@@ -9,20 +8,19 @@ import { COLLECTIONS } from './mock-collections';
 })
 export class GameComponent implements OnInit {
 
-  cards = [];
-
-  constructor() { }
+  constructor(private gameService : GameService) { }
 
   ngOnInit() {
-    this.startGame();
+    this.gameService.startGame();
   }
 
-  startGame() {
-    this.setCards();
+  showRestartBtn() {
+    return this.gameService.isGameOver();
   }
 
-  setCards() {
-    this.cards = COLLECTIONS.concat(COLLECTIONS);
+  clickRestartBtn() {
+    if (this.gameService.isGameOver()) {
+      this.gameService.startGame();
+    }
   }
-
 }

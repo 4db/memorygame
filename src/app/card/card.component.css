@@ -7,3 +7,11 @@
   margin: 5px;
   transition: all 0.5s;
 }
+
+.selected {
+  background-color: blue;
+}
+
+.notEnable {
+  background-color: grey;
+}

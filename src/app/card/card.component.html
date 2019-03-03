@@ -1,5 +1,6 @@
-<div class="card">
-  id : {{card.id}}
-  name : {{card.name}}
-  enable : {{card.enable}}
+<div class="card"
+  (click)="onSelect()"
+  [class.selected]="isSelectedCard()"
+  [class.notEnable]="!card.enable">
+    {{card | json}}
 </div>

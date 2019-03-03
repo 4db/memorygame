@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Collection } from '../game/collection'
+import { GameService } from '../game/game.service';
 
 @Component({
   selector: 'app-card',
@@ -7,11 +7,22 @@ import { Collection } from '../game/collection'
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() card : Collection;
+  @Input() card;
 
-  constructor() { }
+  constructor(private gameService : GameService) { }
 
   ngOnInit() {
+  }
+
+  onSelect() {
+    if (this.card.enable) {
+      this.gameService.onCardSelected(this.card);
+    }
+  }
+
+  isSelectedCard() {
+    const selected = this.gameService.getSelectedCard();
+    return selected && selected.id === this.card.id;
   }
 
 }
