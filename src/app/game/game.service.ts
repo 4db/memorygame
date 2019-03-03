@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Collection } from '../mock/collection';
 import { COLLECTIONS } from '../mock/mock-collections';
-import { isDevMode } from '@angular/core';
 
-const PROD_URL = "/memorygame/assets/"
-const DEV_URL = "/assets/";
+//const URL = "/assets/";
+const URL = "/memorygame/src/assets/";
 const LOGO_IMG = "logo.png";
 const CONGRATULATIONS_IMG = "cong.png";
 
@@ -113,6 +112,6 @@ export class GameService {
   }
 
   getURL() {
-    return isDevMode() ? DEV_URL : PROD_URL;
+    return URL;
   }
 }
