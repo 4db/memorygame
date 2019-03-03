@@ -1,7 +1,23 @@
+<mat-card>
+  <mat-card-content>
+    <section *ngIf="!showRestartBtn()">
+     <h1>Avatar Memory Game</h1>
+     <h2>Click cards and find matching images</h2>
+    </section>
 
-<button mat-button color="primary" *ngIf="showRestartBtn()"
- (click)="clickRestartBtn()"
-> Restart</button>
+    <section *ngIf="showRestartBtn()" >
+      <img src="{{getCongratulationImg()}}" class="center">
+        <h1>Congratulations</h1>
+        <h2>You have successfully completed Memory Game!</h2>
 
-{{this.gameService.selectedCard | json}}
-<app-board></app-board>
+        <h1 (click)="clickRestartBtn()" class="restart">Restart Game</h1>
+    </section>
+
+  </mat-card-content>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-content>
+    <app-board></app-board>
+  </mat-card-content>
+</mat-card>

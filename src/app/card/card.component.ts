@@ -26,11 +26,11 @@ export class CardComponent implements OnInit {
   }
 
   getBackUrl() {
-    return this.gameService.getCardUrl(this.card);
+    return this.card.url;
   }
 
   getFrontUrl() {
-     return this.gameService.getFrontUrl();
+     return this.gameService.getLogoUrl();
   }
 
 }

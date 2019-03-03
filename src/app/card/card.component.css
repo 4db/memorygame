@@ -1,11 +1,5 @@
-
-
-.selected {
-  background-color: blue;
-}
-
 .notEnable {
-  background-color: grey;
+  background-image: radial-gradient(circle 448px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
 }
 
 label {
@@ -14,20 +8,13 @@ label {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     display: block;
-    width: 320px;
-    height: 320px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    width: 110px;
+    height: 110px;
     cursor: pointer;
 }
 
 .player {
     position: relative;
-    height: 100%;
-    width: 100%;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-transition: all 600ms;
@@ -45,10 +32,6 @@ label {
         -webkit-backface-visibility: hidden;
         -moz-backface-visibility: hidden;
         backface-visibility: hidden;
-        border-radius: 50%;
-    }
-    .player img {
-      border-radius: 50%;
     }
 
     .player .back {

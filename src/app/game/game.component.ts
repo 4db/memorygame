@@ -23,4 +23,12 @@ export class GameComponent implements OnInit {
       this.gameService.startGame();
     }
   }
+
+  getProgress() {
+    return this.gameService.getProgress();
+  }
+
+  getCongratulationImg() {
+    return this.gameService.getCongratulationImg();
+  }
 }

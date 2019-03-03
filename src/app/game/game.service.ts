@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { Collection } from '../mock/collection';
 import { COLLECTIONS } from '../mock/mock-collections';
 
- const LOGO_URL = "https://material.angularjs.org/latest/img/logo.svg";
+ const LOGO_IMG = "https://material.angularjs.org/latest/img/logo.svg";
+ const CONGRATULATIONS_IMG = "https://dl.dropboxusercontent.com/s/e1t2hhowjcrs7f5/100daysui_100icon.png";
 
 @Injectable()
 export class GameService {
-   private cards;
+  private cards;
   private enableCount;
   private selectedCard;
   
@@ -62,7 +63,7 @@ export class GameService {
   }
 
   private getLogoUrl() {
-    return LOGO_URL;
+    return LOGO_IMG;
   }
 
   private generateCard(id, c) {
@@ -77,4 +78,11 @@ export class GameService {
     };
   }
 
+  private getProgress() {
+    return  100 / this.cards.length * (this.cards.length - this.enableCount);
+  }
+
+  private getCongratulationImg() {
+    return CONGRATULATIONS_IMG;
+  }
 }
