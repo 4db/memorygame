@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Collection } from '../mock/collection';
 import { COLLECTIONS } from '../mock/mock-collections';
+import { isDevMode } from '@angular/core';
 
- const URL = "/assets/";
- const LOGO_IMG = "logo.png";
- const CONGRATULATIONS_IMG = "cong.png";
+const PROD_URL = "/memorygame/assets/"
+const DEV_URL = "/assets/";
+const LOGO_IMG = "logo.png";
+const CONGRATULATIONS_IMG = "cong.png";
 
 @Injectable()
 export class GameService {
@@ -12,7 +14,8 @@ export class GameService {
   enableCount;
   selectedCard;
   
-  constructor() { }
+  constructor() {
+  }
 
   startGame() {
     // TODO add a score
@@ -86,7 +89,7 @@ export class GameService {
   }
 
   getLogoUrl() {
-    return URL + LOGO_IMG;
+    return this.getURL() + LOGO_IMG;
   }
 
   generateCard(id, c) {
@@ -95,7 +98,7 @@ export class GameService {
         id: id,
         subid: c.id,
         name: c.name,
-        url: URL + c.url,
+        url: this.getURL() + c.url,
         enable: true,
         flipped : false
     };
@@ -106,6 +109,10 @@ export class GameService {
   }
 
   getCongratulationImg() {
-    return URL + CONGRATULATIONS_IMG;
+    return this.getURL() + CONGRATULATIONS_IMG;
+  }
+
+  getURL() {
+    return isDevMode() ? DEV_URL : PROD_URL;
   }
 }
