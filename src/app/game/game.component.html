@@ -5,7 +5,8 @@
      <h2>Click cards and find matching images</h2>
     </section>
 
-    <section *ngIf="showRestartBtn()" >
+    <section *ngIf="showRestartBtn()"
+      (focus)="showRestartBtn()">
       <img src="{{getCongratulationImg()}}" class="center">
         <h1>Congratulations</h1>
         <h2>You have successfully completed Memory Game!</h2>

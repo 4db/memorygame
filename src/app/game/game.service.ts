@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Collection } from '../mock/collection';
 import { COLLECTIONS } from '../mock/mock-collections';
 
- const URL = "https://aldb.github.io/memorygame/src/assets/";
+ const URL = "/assets/";
  const LOGO_IMG = "logo.png";
  const CONGRATULATIONS_IMG = "cong.png";
 
@@ -17,6 +17,7 @@ export class GameService {
   startGame() {
     // TODO add a score
     this.setCards();
+    this.cards = this.shuffle(this.cards);
   }
 
   isGameOver() {
@@ -61,6 +62,22 @@ export class GameService {
       this.cards.push(this.generateCard(this.enableCount, COLLECTIONS[card]));
       this.enableCount++;
     }
+  }
+
+  // Fisher--Yates Algorithm
+  shuffle(array) {
+    let counter = array.length, temp, index;
+    while (counter > 0) {
+      // Pick a random index
+      index = Math.floor(Math.random() * counter);
+      // Decrease counter by 1
+      counter--;
+      // And swap the last element with it
+      temp = array[counter];
+      array[counter] = array[index];
+      array[index] = temp;
+    }
+    return array;
   }
 
   getLogoUrl() {

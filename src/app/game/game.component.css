@@ -1,12 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Sigmar+One);
 
 h1, h2 {
-	transform-origin: 50% 50%;
-	font-family: 'Sigmar One', cursive;
-	top: 0;
-	text-align: center;
-	width: 100%;
-  color: #3da1d1
+  transform-origin: 50% 50%;
+  font-family: 'Sigmar One', cursive;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  color: #3da1d1;
+  letter-spacing: 2px;
 }
 
 .center {
@@ -27,3 +28,4 @@ h1 {
 h2 {
   font-size: 20px;
 }
+
