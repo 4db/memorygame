@@ -8,26 +8,26 @@ import { COLLECTIONS } from '../mock/mock-collections';
 
 @Injectable()
 export class GameService {
-  private cards;
-  private enableCount;
-  private selectedCard;
+  cards;
+  enableCount;
+  selectedCard;
   
   constructor() { }
 
-  private startGame() {
+  startGame() {
     // TODO add a score
     this.setCards();
   }
 
-  private isGameOver() {
+  isGameOver() {
     return this.enableCount === 0;
   }
 
-  private getCards() {
+  getCards() {
     return this.cards;
   }
 
-  private onCardSelected(card) {
+  onCardSelected(card) {
     card.flipped = true;
     if (!this.selectedCard) {
       this.selectedCard = card;
@@ -47,11 +47,11 @@ export class GameService {
     this.selectedCard = undefined;
   }
 
-  private getSelectedCard() {
+  getSelectedCard() {
     return this.selectedCard;
   }
 
-  private setCards() {
+  setCards() {
     this.cards = [];
     this.enableCount = 0;
 
@@ -63,11 +63,11 @@ export class GameService {
     }
   }
 
-  private getLogoUrl() {
+  getLogoUrl() {
     return URL + LOGO_IMG;
   }
 
-  private generateCard(id, c) {
+  generateCard(id, c) {
     // TODO create a card class
     return {
         id: id,
@@ -79,11 +79,11 @@ export class GameService {
     };
   }
 
-  private getProgress() {
+  getProgress() {
     return  100 / this.cards.length * (this.cards.length - this.enableCount);
   }
 
-  private getCongratulationImg() {
+  getCongratulationImg() {
     return URL + CONGRATULATIONS_IMG;
   }
 }

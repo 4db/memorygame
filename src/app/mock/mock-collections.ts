@@ -8,12 +8,12 @@ export const COLLECTIONS: Collection[] = [
   },
   {
     name: "aang",
-    url: "aang2.jpg",
+    url: "aang2.png",
     id: 2
   },
   {
     name: "html5",
-    url: "aang3.jpg",
+    url: "aang3.png",
     id: 3
   },
   {
